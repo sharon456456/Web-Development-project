@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BryTedSha | Shop</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/shop.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="nav-container">
+            
+            <div class="logo">
+                <a href="index.html">
+                    <img src="src/img/BRYTEDSHA.png" width="200">
+                </a>
+            </div>
+
+            <div class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <li><a href="collect.html">Collect</a></li>
+                </ul>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+
+    <section class="shop">
+        <!-- Do a goback button -->
+        <div class="category-container">
+            <h1>SHOP ALL</h1>
+            <div class="category">
+                <button>ALL</button>
+                <button>SOCCER</button>
+                <button>F1</button>
+                <button>BASKETBALL</button>
+            </div>
+        </div>
+
+
+        <!-- SOCCER -->
+        <h2 class="title">SOCCER</h2>
+        <div class="products">
+            <a class="buy-link">
+                <div class="item">
+                    <img src="src/img/soccer gold.jpg">
+                    <p>Soccer Gold Pack</p>
+                    <button class="btn">BUY</button>
+                </div>
+            </a>
+            <a class="buy-link">
+                <div class="item">
+                    <img src="src/img/soccer silver.jpg">
+                    <p>Soccer Silver Pack</p>
+                    <button class="btn">BUY</button>
+                </div>
+            </a>
+            <a class="buy-link">
+                <div class="item">
+                    <img src="src/img/soccer brozen.jpg">
+                    <p>Soccer Bronze Pack</p>
+                    <button class="btn">BUY</button>
+                </div>
+            </a>
+        </div>
+
+        <!-- F1 -->
+        <h2 class="title">F1</h2>
+        <div class="products">
+            <a class="buy-link">
+                <div class="item">
+                    <img src="src/img/F1 gold.jpg">
+                    <p>F1 Gold Pack</p>
+                    <button class="btn">BUY</button>
+                </div>
+            </a>
+            <a class="buy-link">
+                <div class="item">
+                    <img src="src/img/F1 silver.jpg">
+                    <p>F1 Silver Pack</p>
+                    <button class="btn">BUY</button>
+                </div>
+            </a>
+            <a class="buy-link">
+                <div class="item">
+                    <img src="src/img/F1 bronze.jpg">
+                    <p>F1 Bronze Pack</p>
+                    <button class="btn">BUY</button>
+                </div>
+            </a>
+        </div>
+
+        <!-- BASKETBALL -->
+        <h2 class="title">BASKETBALL</h2>
+        <div class="products">
+            <a class="buy-link">
+                <div class="item">
+                    <img src="src/img/basketball gold.png">
+                    <p>Basketball Gold Pack</p>
+                    <button class="btn">BUY</button>
+                </div>
+            </a>
+            <a class="buy-link">
+                <div class="item">
+                    <img src="src/img/basketball silver.png">
+                    <p>Basketball Silver Pack</p>
+                    <button class="btn">BUY</button>
+                </div>
+            </a>
+            <a class="buy-link">
+                <div class="item">
+                    <img src="src/img/basketball bronze.jpg">
+                    <p>Basketball Bronze Pack</p>
+                    <button class="btn">BUY</button>
+                </div>
+            </a>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2025 BryTedSha — All Rights Reserved.</p>
+            <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Back to Top</button>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll(".buy-link").forEach(a => {
+            let text = a.querySelector("p").textContent.toLowerCase();
+            let sport = text.includes("soccer") ? "soccer" : text.includes("f1") ? "f1" : text.includes("basketball") ? "basketball" : "unknown";
+            let rarity = text.includes("gold") ? "gold" : text.includes("silver") || text.includes("sliver") ? "silver" : text.includes("bronze") ? "bronze" : "unknown";
+            a.href = `shop-product.html?sport=${sport}&rarity=${rarity}`;
+        });
+    </script>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+
+
+</body>
+
+</html>

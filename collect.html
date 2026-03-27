@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BryTedSha | Collect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="css/inventory.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="nav-container">
+    <div class="logo">
+      <a href="shop.html">
+        <img src="src/img/BRYTEDSHA.png" width="180">
+      </a>
+    </div>
+
+    <div class="navbar">
+      <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" >Shop</a></li>
+                    <li><a href="inventory.html" >Inventory</a></li>
+                    <li><a href="collect.html" class="active">Collect</a></li>
+                </ul>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ================= COLLECT ================= -->
+<section class="inventory">
+
+  <h2 class="title">My Collection</h2>
+
+  <p id="empty-text"
+     style="display:none; margin-top:20px;"
+  >
+    No cards collected yet.
+  </p>
+
+  <div class="cards" id="collect-grid"></div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-content">
+      <p class="footer-text">© 2025 BryTedSha — All Rights Reserved.</p>
+      <button class="back-to-top"
+              onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+          ↑ Back to Top
+      </button>
+  </div>
+</footer>
+
+<!-- ================= JS ================= -->
+<script src="collect.js"></script>
+
+<script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+
+</body>
+</html>

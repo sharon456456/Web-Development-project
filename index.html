@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <title>BryTedSha</title>
+</head>
+
+<body>
+    <!-- <p>Welcome to BryTedSha!</p> -->
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="src/img/BRYTEDSHA.png" alt="BryTedSha Logo" width="200">
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="inventory.html">Inventory</a></li>
+                        <li><a href="collect.html">Collect</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <h1>PULL PACKS<br>COLLECT PLAYERS!</h1>
+                    <p>Experience the thrill of opening packs and building your ultimate collection of sport players. Start your journey today!</p>
+                    <a href="shop.html" class="btn">Shop Now &nbsp; →</a>
+                </div>
+                <div class="col-2">
+                    <img src="src/img/hero.png" alt="Hero Image" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rule">
+        <div class="rule-description">
+            <h2>How It Works</h2>
+            <p>Collect your favorite players by pulling packs. Each pack contains a random selection of players to add to your collection.</p>
+        </div>
+
+        <div class="rule-pack-row">
+            <img src="src/img/basketball.png" alt="Basketball Pack">
+            <img src="src/img/soccer.png" alt="Soccer Pack">
+            <img src="src/img/F1.png" alt="F1 Pack">
+        </div>
+
+        <div class="rule-text-row">
+            <div class="rule-box">
+                <div class="rule-icon">1</div>
+                <p>Each pack contains random players.</p>
+            </div>
+            <div class="rule-box">
+                <div class="rule-icon">2</div>
+                <p>Different pack types have different rarity rates.</p>
+            </div>
+            <div class="rule-box">
+                <div class="rule-icon">3</div>
+                <p>Pulled cards will appear in the Collect page.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2025 BryTedSha — All Rights Reserved.</p>
+            <button class="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑ Back to Top</button>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+
+
+</body>
+
+</html>

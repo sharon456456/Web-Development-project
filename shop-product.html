@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BryTedSha | Product</title>
+    <link rel="stylesheet" href="css/shop-product.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="src/img/BRYTEDSHA.png" width="180">
+                </a>
+            </div>
+
+            <div class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="inventory.html">Inventory</a></li>
+                    <li><a href="collect.html">Collect</a></li>
+                </ul>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+   
+
+
+    <!-- Product Section -->
+    <section class="product">
+        <div class="product-left">
+            <button class="back-btn">← BACK</button>
+            <img src="src/img/soccer.png" alt="Product Image" class="product-img">
+        </div>
+        <div class="product-right">
+            <div class="tag">
+                <span class="category">SPORT</span>
+            </div>
+            <h1 class="title">Product Name</h1>
+            <p class="subtitle">PACK</p>
+            <div class="quantity">
+                <button class="qty-btn">-</button>
+                <span class="qty">1</span>
+                <button class="qty-btn">+</button>
+            </div>
+            <button class="buy-btn">BUY NOW</button>
+        </div>
+    </section>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const sport = params.get('sport') || 'soccer';
+        const rarity = params.get('rarity') || 'gold';
+
+        const productImg = document.querySelector('.product-img');
+        const category = document.querySelector('.category');
+        const title = document.querySelector('.title');
+        const subtitle = document.querySelector('.subtitle');
+        const buyBtn = document.querySelector('.buy-btn');
+
+        productImg.src = `src/img/${sport}.png`;
+        category.textContent = sport.toUpperCase();
+        title.textContent = `${sport.charAt(0).toUpperCase() + sport.slice(1)} ${rarity.charAt(0).toUpperCase() + rarity.slice(1)} Pack`;
+        subtitle.textContent = 'COLLECTIBLE';
+
+        buyBtn.classList.add(rarity.toLowerCase());
+    </script>
+
+    <script src="product.js"></script>
+
+
+    <!-- Card Popup -->
+    <div id="card-popup" class="card-popup hidden">
+        <div class="popup-content">
+
+            <!-- 光柱效果 -->
+            <div id="lightbeam"></div>
+
+            <!-- 卡片動畫容器（無背面） -->
+            <div class="card-appear">
+                <div class="card-inner" id="card-inner">
+
+                    <!-- 只有卡片正面 -->
+                    <div class="card-front">
+                        <img id="popup-card-img" src="" alt="Card Image">
+                        <h2 id="popup-card-name"></h2>
+                        <p id="popup-card-rarity"></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 關閉按鈕 -->
+            <button id="close-popup">CLOSE</button>
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2025 BryTedSha — All Rights Reserved.</p>
+            <button class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">↑ Back to Top</button>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+
+    <script>
+        const backBtn = document.querySelector(".back-btn");
+
+        backBtn.addEventListener("click", () => {
+            if (document.referrer.includes("shop.html")) {
+                history.back();
+            } else {
+                window.location.href = "shop.html";
+            }
+        });
+    </script>
+
+
+</body>
+</html>
+
